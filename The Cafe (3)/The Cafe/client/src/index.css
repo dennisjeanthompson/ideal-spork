@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45 20% 97%);
+  --foreground: hsl(20 14% 20%);
+  --card: hsl(45 25% 95%);
+  --card-foreground: hsl(20 14% 20%);
+  --popover: hsl(45 25% 95%);
+  --popover-foreground: hsl(20 14% 20%);
+  --primary: hsl(25 95% 35%);
+  --primary-foreground: hsl(45 25% 95%);
+  --secondary: hsl(42 31% 82%);
+  --secondary-foreground: hsl(20 14% 20%);
+  --muted: hsl(42 15% 90%);
+  --muted-foreground: hsl(20 7% 46%);
+  --accent: hsl(120 60% 35%);
+  --accent-foreground: hsl(45 25% 95%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(45 25% 95%);
+  --border: hsl(42 15% 85%);
+  --input: hsl(42 15% 85%);
+  --ring: hsl(25 95% 35%);
+  --chart-1: hsl(25 95% 35%);
+  --chart-2: hsl(42 31% 60%);
+  --chart-3: hsl(120 60% 35%);
+  --chart-4: hsl(280 60% 50%);
+  --chart-5: hsl(200 60% 50%);
+  --radius: 8px;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+}
+
+.dark {
+  --background: hsl(20 14% 4%);
+  --foreground: hsl(45 20% 90%);
+  --card: hsl(20 14% 8%);
+  --card-foreground: hsl(45 20% 90%);
+  --popover: hsl(20 14% 8%);
+  --popover-foreground: hsl(45 20% 90%);
+  --primary: hsl(25 95% 45%);
+  --primary-foreground: hsl(20 14% 4%);
+  --secondary: hsl(42 31% 20%);
+  --secondary-foreground: hsl(45 20% 90%);
+  --muted: hsl(20 14% 15%);
+  --muted-foreground: hsl(42 15% 60%);
+  --accent: hsl(120 60% 45%);
+  --accent-foreground: hsl(20 14% 4%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(45 25% 95%);
+  --border: hsl(20 14% 18%);
+  --input: hsl(20 14% 18%);
+  --ring: hsl(25 95% 45%);
+  --chart-1: hsl(25 95% 45%);
+  --chart-2: hsl(42 31% 60%);
+  --chart-3: hsl(120 60% 45%);
+  --chart-4: hsl(280 60% 60%);
+  --chart-5: hsl(200 60% 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom animations for the café theme */
+@keyframes coffee-steam {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-5px) rotate(2deg); opacity: 1; }
+}
+
+.coffee-steam {
+  animation: coffee-steam 2s ease-in-out infinite;
+}
+
+/* Clock animation */
+@keyframes pulse-clock {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-clock {
+  animation: pulse-clock 2s ease-in-out infinite;
+}
+
+/* Status indicator animations */
+@keyframes status-working {
+  0%, 100% { background-color: hsl(120 60% 35%); }
+  50% { background-color: hsl(120 60% 45%); }
+}
+
+@keyframes status-break {
+  0%, 100% { background-color: hsl(42 31% 60%); }
+  50% { background-color: hsl(42 31% 70%); }
+}
+
+@keyframes status-late {
+  0%, 100% { background-color: hsl(0 84% 60%); }
+  50% { background-color: hsl(0 84% 70%); }
+}
+
+.status-working {
+  animation: status-working 3s ease-in-out infinite;
+}
+
+.status-break {
+  animation: status-break 3s ease-in-out infinite;
+}
+
+.status-late {
+  animation: status-late 3s ease-in-out infinite;
+}
